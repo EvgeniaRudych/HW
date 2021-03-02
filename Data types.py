@@ -24,27 +24,27 @@ print(type(lst_d))
 print(type(dict_e))
 
 #4*. Check the type of the objects by using isinstance.
-print(isinstance(int_a))
-print(isinstance(str_b))
-print(isinstance(set_c))
-print(isinstance(lst_d))
-print(isinstance(dict_e))
+print(isinstance(int_a, int))
+print(isinstance(str_b, str))
+print(isinstance(set_c, set))
+print(isinstance(lst_d, list))
+print(isinstance(dict_e, dict))
 
 #String formatting:
 #Replace the placeholders with a value:
 #"Anna has ___ apples and ___ peaches."
 
 #5. With .format and curly braces {}
-print("Anna has {} apples and {} peaches."format(3, 7))
+print("Anna has {} apples and {} peaches.".format(3, 7))
 
 # 6. By passing index numbers into the curly braces.
-print("Anna has {0} apples and {1} peaches."format(4, 5))
+print("Anna has {0} apples and {1} peaches.".format(4, 5))
 
 #7. By using keyword arguments into the curly braces.
-print("Anna has {r} apples and {j} peaches."format(r="red", j="juicy"))
+print("Anna has {r} apples and {j} peaches.".format(r="red", j="juicy"))
 
 #8*. With indicators of field size (5 chars for the first and 3 for the second)
-print("Anna has {0:5} apples and {1:3} peaches."format(3, "sweet"))
+print("Anna has {0:5} apples and {1:3} peaches.".format(3, "sweet"))
 
 #9. With f-strings and variables
 amount="two"
@@ -54,13 +54,17 @@ print(f"Anna has {amount} apples and {adj} peaches.")
 
 #10.With % operator
 
-number="two", taste="juicy"
-print("Anna has %s apples and %s peaches."%(number, taste)))
+number="two"
+taste="juicy"
+print("Anna has %s apples and %s peaches."%(number, taste))
 
 #11*. With variable substitutions by name (hint: by using dict)
 
-data_dict={"quantity":seven, "smell"=sweet}
+seven = 7
+odor = "sweet"
+data_dict={"quantity": 7, "smell": "sweet"}
 print('Anna has %(quantity)s apples and %(smell)s peaches.'%data_dict)
+
 
 Comprehensions:
 (1)
@@ -80,10 +84,10 @@ list_comprehension = [num // 2 if num % 2 == 0 else num * 10 for num in range(10
 list_comprehension=[num**2 if num%2==1 else num**4 for num in range(10)]
 
 #13. Convert (2) to regular for with if-else
-lst[]
+lst = []
 for num in range(10):
-    if num %2==0
-        lst.append(num//2)
+    if num %2 == 0:
+        lst.append(num // 2)
     else:
         lst.append(num*10)
         print(lst)
@@ -124,7 +128,7 @@ d={num:num **2 if num %2 ==1 else num // 0.5}
 
 #16.Convert (5) to regular for with if.
 d={}
-for x in range(10)
+for x in range(10):
     if x ** 3 %4 == 0
         d[x] = x ** 3
         print(d)
@@ -132,13 +136,12 @@ for x in range(10)
 
 #17*. Convert (6) to regular for with if-else.
 d={}
-for x in range (10)
-    ** 3 % 4 == 0:
+for x in range (10):
+  if x ** 3 % 4 == 0:
     d[x] = x ** 3
 else:
     d[x]=x
     print(d)
-
 
 
 
@@ -175,7 +178,7 @@ lst_to_sort = [5, 18, 1, 24, 33, 15, 13, 55]
 print(sorted(lst_to_sort))
 
 #21. Sort lst_to_sort from max to min
-print(sorted(lst_to_sort, Reverse=True))
+print(sorted(lst_to_sort, reverse=True))
 
 #22. Use map and lambda to update the lst_to_sort by multiply each element by 2
 new_lst_to_sort=list(map(lambda x: x * 2, lst_to_sort))
@@ -194,7 +197,8 @@ print(reduce(lambda x, y: x + y, lst_to_sort))
 neue_list_to_sort = list(filter(lambda x: x %2 == 1, lst_to_sort))
 
 #26. Considering the range of values: b = range(-10, 10), use the function filter to return only negative numbers.
-b_another = list(filter(lambda x: x < 0,b))
+b = range(-10, 10)
+b_another = list(filter(lambda x: x < 0, b))
 
 #27.Using the filter function, find the values that are common to the two lists:
 list_1 = [1,2,3,5,7,9]
