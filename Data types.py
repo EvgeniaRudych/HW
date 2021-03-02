@@ -41,7 +41,7 @@ print("Anna has {} apples and {} peaches."format(3, 7))
 print("Anna has {0} apples and {1} peaches."format(4, 5))
 
 #7. By using keyword arguments into the curly braces.
-print("Anna has {r} apples and {j} peaches."format(r=red, j=juicy))
+print("Anna has {r} apples and {j} peaches."format(r="red", j="juicy"))
 
 #8*. With indicators of field size (5 chars for the first and 3 for the second)
 print("Anna has {0:5} apples and {1:3} peaches."format(3, "sweet"))
