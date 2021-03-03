@@ -95,28 +95,6 @@ print(lst)
 
 
 
-(3)
-d = {}
-for num in range(1, 11):
-   if num % 2 == 1:
-        d[num] = num ** 2
-print(d)
-
-(4)
-d = {}
-for num in range(1, 11):
-    if num % 2 == 1:
-        d[num] = num ** 2
-    else:
-        d[num] = num // 0.5
-print(d)
-
-(5)
-dict_comprehension = {x: x**3 for x in range(10) if x**3 % 4 == 0}
-
-(6)
-dict_comprehension = {x: x**3 if x**3 % 4 == 0 else x for x in range(10)}
-
 
 
 #14. Convert (3) to dict comprehension.
@@ -145,24 +123,8 @@ print(d)
 
 
 
-    (7)
-
-
-    def foo(x, y):
-        if x < y:
-            return x
-        else:
-            return y
-
-
-    (8)
-    foo = lambda x, y, z: z if y < x and x > z else y
-
-
-
-
 #18. Convert (7) to lambda function
-    foo = lambda x,y: x if x < y else y
+foo = lambda x,y: x if x < y else y
 
 
 #19*. Convert (8) to regular function
