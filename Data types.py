@@ -53,22 +53,17 @@ adj="juicy"
 print(f"Anna has {amount} apples and {adj} peaches.")
 
 #10.With % operator
-
 number="two"
 taste="juicy"
 print("Anna has %s apples and %s peaches."%(number, taste))
 
 #11*. With variable substitutions by name (hint: by using dict)
-
 seven = 7
 odor = "sweet"
 data_dict={"quantity": 7, "smell": "sweet"}
 print('Anna has %(quantity)s apples and %(smell)s peaches.'%data_dict)
 
-
-
 #12.Convert (1) to list comprehension
-
 list_comprehension=[num**2 if num%2==1 else num**4 for num in range(10)]
 
 #13. Convert (2) to regular for with if-else
@@ -79,11 +74,6 @@ for num in range(10):
    else:
         lst.append(num*10)
 print(lst)
-
-
-
-
-
 
 #14. Convert (3) to dict comprehension.
 d={num: num ** 2 for num in range (1,11) if num %2 == 1}
@@ -99,7 +89,6 @@ for x in range(10):
         d[x] = x ** 3
 print(d)
 
-
 #17*. Convert (6) to regular for with if-else.
 d={}
 for x in range (10):
@@ -109,11 +98,8 @@ for x in range (10):
     d[x]=x
 print(d)
 
-
-
 #18. Convert (7) to lambda function
 foo = lambda x,y: x if x < y else y
-
 
 #19*. Convert (8) to regular function
 def foo(x, y, z):
