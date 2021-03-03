@@ -90,7 +90,7 @@ for num in range(10):
         lst.append(num // 2)
    else:
         lst.append(num*10)
-        print(lst)
+print(lst)
 
 
 
@@ -98,7 +98,7 @@ for num in range(10):
 (3)
 d = {}
 for num in range(1, 11):
-    if num % 2 == 1:
+   if num % 2 == 1:
         d[num] = num ** 2
 print(d)
 
@@ -131,7 +131,7 @@ d={}
 for x in range(10):
    if x ** 3 %4 == 0:
         d[x] = x ** 3
-        print(d)
+print(d)
 
 
 #17*. Convert (6) to regular for with if-else.
@@ -141,7 +141,7 @@ for x in range (10):
     d[x] = x ** 3
    else:
     d[x]=x
-    print(d)
+print(d)
 
 
 
