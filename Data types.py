@@ -86,9 +86,9 @@ list_comprehension=[num**2 if num%2==1 else num**4 for num in range(10)]
 #13. Convert (2) to regular for with if-else
 lst = []
 for num in range(10):
-    if num %2 == 0:
+   if num %2 == 0:
         lst.append(num // 2)
-    else:
+   else:
         lst.append(num*10)
         print(lst)
 
@@ -129,7 +129,7 @@ d={num:num **2 if num %2 ==1 else num // 0.5}
 #16.Convert (5) to regular for with if.
 d={}
 for x in range(10):
-    if x ** 3 %4 == 0:
+   if x ** 3 %4 == 0:
         d[x] = x ** 3
         print(d)
 
@@ -137,9 +137,9 @@ for x in range(10):
 #17*. Convert (6) to regular for with if-else.
 d={}
 for x in range (10):
-  if x ** 3 % 4 == 0:
+   if x ** 3 % 4 == 0:
     d[x] = x ** 3
-  else:
+   else:
     d[x]=x
     print(d)
 
