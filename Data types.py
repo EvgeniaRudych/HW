@@ -66,18 +66,6 @@ data_dict={"quantity": 7, "smell": "sweet"}
 print('Anna has %(quantity)s apples and %(smell)s peaches.'%data_dict)
 
 
-Comprehensions:
-(1)
-lst = []
-for num in range(10):
-    if num % 2 == 1:
-        lst.append(num ** 2)
-    else:
-        lst.append(num ** 4)
-print(lst)
-
-(2)
-list_comprehension = [num // 2 if num % 2 == 0 else num * 10 for num in range(10)]
 
 #12.Convert (1) to list comprehension
 
