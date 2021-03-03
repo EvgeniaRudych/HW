@@ -44,7 +44,7 @@ print("Anna has {0} apples and {1} peaches.".format(4, 5))
 print("Anna has {r} apples and {j} peaches.".format(r="red", j="juicy"))
 
 #8*. With indicators of field size (5 chars for the first and 3 for the second)
-print("Anna has {0:5} apples and {1:3} peaches.".format(3, "sweet"))
+print("Anna has {0:5} apples and {1:3} peaches.".format(3,5))
 
 #9. With f-strings and variables
 amount="two"
@@ -129,7 +129,7 @@ d={num:num **2 if num %2 ==1 else num // 0.5}
 #16.Convert (5) to regular for with if.
 d={}
 for x in range(10):
-    if x ** 3 %4 == 0
+    if x ** 3 %4 == 0:
         d[x] = x ** 3
         print(d)
 
@@ -139,7 +139,7 @@ d={}
 for x in range (10):
   if x ** 3 % 4 == 0:
     d[x] = x ** 3
-else:
+  else:
     d[x]=x
     print(d)
 
