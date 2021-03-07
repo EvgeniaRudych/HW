@@ -18,12 +18,12 @@ class Bus(Vehicle):
         super().__init__(max_speed, mileage)
         self.seating_capacity = seating_capacity
 
-        def capacity(self):
-            print(f'Seating capacity is {self.seating_capacity}')
+    def capacity(self):
+        print(f'Seating capacity is {self.seating_capacity}')
 
-            bus = Bus("50 km", "400 miles", "40 sits")
-            bus.print_vehicle()
-            bus.capacity()
+ bus = Bus("50 km", "400 miles", "40 sits")
+ bus.print_vehicle()
+ bus.capacity()
 
 
 # 3.Determine which class a given Bus object belongs to (Check type of an object)
@@ -62,7 +62,9 @@ class Bear:
 
 
 class Wolf:
-    def make_sound(self):
+    def make_sound(self, name, age):
+        self.name = name
+        self.age = age
         print('Woof')
 
         bear = Bear(Umka, 2)
@@ -110,7 +112,6 @@ class Count:
 # Create a new class with __call__ method and define this call to return sum.
 
 class CallArea:
-
     def __call__(self, a, b):
         c = a + b
         return c
