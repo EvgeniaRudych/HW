@@ -67,11 +67,11 @@ class Wolf:
         self.age = age
         print('Woof')
 
-        bear = Bear(Umka, 2)
-        wolf = Wolf(Freki, 10)
+bear = Bear(Umka, 2)
+wolf = Wolf(Freki, 10)
 
-        for animal in (bear, wolf):
-            animal.make_sound()
+for animal in (bear, wolf):
+    animal.make_sound()
 
 
 # 8.Create class City with name, population instance attributes, return a new instance only when population > 1500, otherwise return message: "Your city is too small".
@@ -137,11 +137,11 @@ class MyOrder:
         self.cart = cart
         self.customer = customer
 
-        def __bool__(self):
-            if len(self.cart) > 0:
-                return True
-            else:
-                return False
+    def __bool__(self):
+        if len(self.cart) > 0:
+            return True
+        else:
+            return False
 
 
 order_1 = MyOrder(['a', 'b', 'c'], 'd')
