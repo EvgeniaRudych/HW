@@ -32,7 +32,7 @@ print(type(my_bus))
 
 # 4.Determine if School_bus is also an instance of the Vehicle class
 your_bus = Bus("80 km", "56 miles", "21 sits")
-print(isinstance(my_bus, Bus))
+print(isinstance(your_bus, Bus))
 
 
 # 5. Create a new class School with get_school_id and number_of_students instance attributes
@@ -44,7 +44,7 @@ class School:
 
 # 6 *.Create a new class SchoolBus that will inherit all of the methods from School and Bus and will have its own - bus_school_color
 class SchoolBus(School, Bus):
-    def __init__(self, get_school_id, number_of_students, max_speed, mileage, seating_capacity):
+    def __init__(self, get_school_id, number_of_students, max_speed, mileage, seating_capacity, bus_school_color):
         School.__init__(get_school_id, number_of_students)
         Bus.__init__(max_speed, mileage, seating_capacity)
         self.bus_school_color = bus_school_color
@@ -66,7 +66,7 @@ class Wolf:
         self.name = name
         self.age = age
     
-    def make_sound(self):
+    def make_sound():
         self.name = name
         self.age = age
         print('Woof')
