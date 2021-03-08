@@ -21,9 +21,9 @@ class Bus(Vehicle):
     def capacity(self):
         print(f'Seating capacity is {self.seating_capacity}')
 
- bus = Bus("50 km", "400 miles", "40 sits")
- bus.print_vehicle()
- bus.capacity()
+bus = Bus("50 km", "400 miles", "40 sits")
+bus.print_vehicle()
+bus.capacity()
 
 
 # 3.Determine which class a given Bus object belongs to (Check type of an object)
@@ -62,13 +62,17 @@ class Bear:
 
 
 class Wolf:
-    def make_sound(self, name, age):
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def make_sound(self):
         self.name = name
         self.age = age
         print('Woof')
 
-bear = Bear(Umka, 2)
-wolf = Wolf(Freki, 10)
+bear = Bear("Umka", 2)
+wolf = Wolf("Freki", 10)
 
 for animal in (bear, wolf):
     animal.make_sound()
