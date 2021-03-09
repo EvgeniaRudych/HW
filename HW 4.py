@@ -32,7 +32,7 @@ print(type(my_bus))
 
 # 4.Determine if School_bus is also an instance of the Vehicle class
 your_bus = Bus("80 km", "56 miles", "21 sits")
-print(isinstance(your_bus, Bus))
+print(isinstance(your_bus, Vehicle))
 
 
 # 5. Create a new class School with get_school_id and number_of_students instance attributes
@@ -66,7 +66,7 @@ class Wolf:
         self.name = name
         self.age = age
     
-    def make_sound():
+    def make_sound(self):
         print('Woof')
 
 bear = Bear("Umka", 2)
