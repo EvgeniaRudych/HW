@@ -21,10 +21,10 @@ class Bus(Vehicle):
     def capacity(self):
         print(f'Seating capacity is {self.seating_capacity}')
 
-
 bus = Bus("50 km", "400 miles", "40 sits")
 bus.print_vehicle()
 bus.capacity()
+
 
 # 3.Determine which class a given Bus object belongs to (Check type of an object)
 my_bus = Bus("30 km", "20 miles", "40 sits")
@@ -32,7 +32,7 @@ print(type(my_bus))
 
 # 4.Determine if School_bus is also an instance of the Vehicle class
 your_bus = Bus("80 km", "56 miles", "21 sits")
-print(isinstance(your_bus, Vehicle))
+print(isinstance(your_bus, Bus))
 
 
 # 5. Create a new class School with get_school_id and number_of_students instance attributes
@@ -48,9 +48,6 @@ class SchoolBus(School, Bus):
         School.__init__(self, get_school_id, number_of_students)
         Bus.__init__(self, max_speed, mileage, seating_capacity)
         self.bus_school_color = bus_school_color
-
-greenBus = SchoolBus(45, 15, "40 km", "20 miles", "20 sits", "green")
-print(greenBus)
 
 
 # 7. Polymorphism: Create two classes: Bear, Wolf. Both of them should have make_sound method. Create two instances, one of Bear and one of Wolf,
@@ -68,10 +65,9 @@ class Wolf:
     def __init__(self, name, age):
         self.name = name
         self.age = age
-
-    def make_sound(self):
+    
+    def make_sound():
         print('Woof')
-
 
 bear = Bear("Umka", 2)
 wolf = Wolf("Freki", 10)
