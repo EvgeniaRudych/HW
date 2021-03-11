@@ -150,7 +150,7 @@ class AddressBookDataClass:
 AddressBookDataClass = collections.namedtuple('AdressBookDataClass',
                                               ['key', 'name', 'phone_number', 'address', 'email', 'birthday', 'age'])
 
-8.
+#8.
 
 
 class AddressBook:
