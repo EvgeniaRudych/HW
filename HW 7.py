@@ -39,8 +39,8 @@ class Workbook(object):
     def __init__(self, workbook_name):
         self.file_obj = openpyxl.load_workbook(workbook_name)
 
-        def __enter__(self):
+    def __enter__(self):
             return self.file_obj
 
-        def __exit(self, exc_type, exc_value, exc_traceback):
+    def __exit(self, exc_type, exc_value, exc_traceback):
             self.file_obj.close()
