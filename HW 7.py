@@ -42,5 +42,5 @@ class Workbook(object):
     def __enter__(self):
             return self.file_obj
 
-    def __exit(self, exc_type, exc_value, exc_traceback):
+    def __exit__(self, exc_type, exc_value, exc_traceback):
             self.file_obj.close()
