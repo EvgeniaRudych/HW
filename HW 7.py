@@ -19,13 +19,16 @@ for i in range(0, (len(dict_1)), 2):
     dict_1.update({content[i]: content[i + 1]})
 print(dict_1)
 
+with open("task1.txt", "w") as file:
+    for item in dict_1.values():
+        file.write(f"{item}")
 # Task 2
 # в файлі task2 збережений список, відкрийте цей файл, прочитайте вміст, і знайдіть середнє арифметичне чисел що знаходяться в списку
 
 file = open("task2", "rb")
 task2_new = file.read()
 task2_2 = pickle.load(task2_new)
-
+file.close
 mean_arith = (sum(task2_2) / len(task2_2))
 print(mean_arith)
 
