@@ -28,7 +28,7 @@ with open("task1.txt", "w") as file:
 file = open("task2", "rb")
 task2_new = file.read()
 task2_2 = pickle.load(task2_new)
-file.close
+file.close()
 mean_arith = (sum(task2_2) / len(task2_2))
 print(mean_arith)
 
