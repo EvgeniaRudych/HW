@@ -264,13 +264,17 @@ class BadassPests(Pests):
 def eat(self):
     print("Pests are looking for a fresh target")
     for pest in range(self.quantity):
-        if tomato_bush.tomatoes > 0:
-            return tomato_bush.tomatoes.pop()
+        tomato_bush.tomatoes.pop()
+        if tomato_bush.tomatoes == 0:
+            print(f"No tomatoes are left for bugs")
+            break
+
 
     for pest in range(self.quantity):
-        if apple_tree.apples > 0:
-            return apple_tree.pop()
-
+        apple_tree.apples.pop()
+        if apple_tree.apples == 0:
+           print(f"No apples are left for bugs")
+           break
 
 ### Implement the possibility when pests eat the fruit and vegetable
 
