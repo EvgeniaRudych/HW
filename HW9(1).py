@@ -37,10 +37,9 @@ def sum_operation():
         logging.error("Y is not a number!")
         return
     z = x + y
+    print(f"{x} + {y} = {z}")
+    logging.info("You got your sum")
     return z
-
-
-logging.info("You got your sum")
 
 
 def subtract_operation():
@@ -58,11 +57,10 @@ def subtract_operation():
     except ValueError:
         logging.error("Y is not a number")
         return
-        z = x - y
+    z = x - y
+    print(f"{x} - {y} = {z}")
+    logging.info("You got your subtraction")
     return z
-
-
-logging.info("You got your subtraction")
 
 
 def mult_operation():
@@ -80,10 +78,10 @@ def mult_operation():
     except ValueError:
         logging.error("Y is not a number")
         return
-        z = x * y
-        return z
+    z = x * y
+    print(f"{x} * {y} = {z}")
     logging.info("You got your multiplication")
-
+    return z
 
 def div_operation():
     print(f"division")
@@ -102,6 +100,7 @@ def div_operation():
         return
     try:
         z = x / y
+        print(f"{x} / {y} = {z}")
         return z
     except ZeroDivisionError:
         print("You can't divide by zero!")
@@ -124,6 +123,7 @@ def exc_operation():
         logging.error("Y is not a number")
         return
     z = x ** y
+    print(f"{x} ** {y} = {z}")
     return z
 
 
@@ -143,6 +143,7 @@ def sqrt_operation():
         logging.error("Y is not a number")
         return
     z = x ** (1 / y)
+    print(f"{x} ** (1 / {y}) = {z}")
     return z
 
 
@@ -162,4 +163,14 @@ def percent_operation():
         logging.error("Y is not a number")
         return
     z = x / 100 * y
+    print(f"{x} /(100 * {y}) = {z}")
     return z
+
+
+sum_operation()
+subtract_operation()
+mult_operation()
+div_operation()
+exc_operation()
+sqrt_operation()
+percent_operation()
