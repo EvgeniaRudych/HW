@@ -10,19 +10,48 @@
 # (задайте в статік аргументах класу як конфіг пилососа, або в окремому конфіг файлі),
 # а кількість сміття збільшується
 
-# Напишіть власні ексепшини які кидаються коли заряд батареї менше ніж 20%, заряд батареї 0%, кількість води - 0, кількість сміття більша ніж певне число
-# опрацюйте ваші ексепшини (наприклад якщо заряд батареї менше 20% то цикл робить ще певну кількість ітерацій і зупиняється,
+# Напишіть власні ексепшини які кидаються коли заряд батареї менше ніж 20%, заряд батареї 0%,
+# кількість води - 0, кількість сміття більша ніж певне число
+# опрацюйте ваші ексепшини (наприклад якщо заряд батареї менше 20%
+# то цикл робить ще певну кількість ітерацій і зупиняється,
 # якщо вода закінчилась то пилосос тепер не миє підлогу а тільки пилососить,
 # 0 відсотків заряду - пилосос кричить щоб його занесли на зарядку бо сам доїхати не може)
 # можете придумати ще свої ексепшини і як їх опрацьовувати
 import time
 
 
+class NoWater(Exception):
+    pass
+
+
+class NotEnoughWater(Exception):
+    pass
+
+
+class NoRoom(Exception):
+    pass
+
+
+class NotEnoughRoom(Exception):
+    pass
+
+
+class NoCharge(Exception):
+    pass
+
+
+class NotEnoughCharge(Exception):
+    pass
+
+
 class Roomba:
+    water_intake = 5
+    charge_intake = 5
+
     def __init__(self, charge, fullness, water_amount):
-        self.charge = 100
-        self.fullness = 0
-        self.water_amount = 100
+        self.charge = charge
+        self.fullness = fullness
+        self.water_amount = water_amount
 
     def wash(self):
         if self.water_amount == 0:
@@ -30,7 +59,7 @@ class Roomba:
         elif self.water_amount < 5:
             raise NotEnoughWater
         else:
-            self.water_amount -= 5
+            self.water_amount = self.water_amount - self.water_intake
 
     def vacuum_cleaner(self):
         if self.fullness == 100:
@@ -46,26 +75,47 @@ class Roomba:
         elif self.charge < 20:
             raise NotEnoughCharge
         else:
-            self.charge -= 5
+            self.charge = self.charge - self.charge_intake
 
-    def move(self):
-        while True:
-            print(f"moving")
-            try:
-                self.wash()
-            except NoWater:
-                print(f"No water.Can't wash")
-            try:
-                self.vacuum_cleaner()
-            except NoRoom:
-                print(f"No room. Can't clean anymore")
-            try:
-                self.charge()
-            except NoCharge:
-                print(f"No energy")
+
+def wash(roomba):
+    print("Washing")
+    roomba.wash()
+
+
+def vacuum_cleaner(roomba):
+    print("Cleaning")
+    roomba.vacuum_cleaner()
+
+
+
+roomba1 = Roomba(100,0, 100)
+
+
+def move(roomba):
+    i = 10
+    l = 100
+    while True:
+        print(f"moving")
+        try:
+            wash(roomba)
+        except NoWater:
+            if l == 0:
+             print(f"No water.Can't wash")
+        try:
+            vacuum_cleaner(roomba)
+        except NoRoom:
+            print(f"No room. Can't clean anymore")
+        try:
+            roomba.charge()
+        except NoCharge:
+            print("Not enough power")
+            break
+        except NotEnoughCharge:
+            if i == 0:
+                print("Can't move anymore")
                 break
-            except NotEnoughCharge:
-                print("Can't move!Need more energy")
-                time.sleep(1)
+        time.sleep(1)
 
+move(roomba1)
 
