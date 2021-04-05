@@ -1,8 +1,8 @@
 import dataclasses
 from abc import ABC, abstractmethod
 
-VEGETABLES = []
-FRUITS = []
+VEGETABLES = ["Cherry", "Red_tomato"]
+FRUITS = ["Golden", "King"]
 
 states = {'nothing': 0, 'flowering': 1, 'green': 2, 'red': 3, 'rotten': 4}
 
@@ -153,7 +153,8 @@ class Tomato(Vegetables):
 
 class TomatoBush:
     def __init__(self, num):
-        self.tomatoes = [Tomato(index, 'Red_tomato', states, 'Cherry') for index in range(0, num - 1)]
+        self.tomatoes = [Tomato(index, 'Red_tomato', states, 'Cherry') for index in range(1, num + 1)]
+        self.state = 0
 
     def grow_all(self):
         for tomato in self.tomatoes:
@@ -197,7 +198,7 @@ class Apple(Fruit):
 
 class AppleTree:
     def __init__(self, num):
-        self.apples = [Apple(index, 'Golden', states, 'King') for index in range(0, num - 1)]
+        self.apples = [Apple(index, 'Golden', states, 'King') for index in range(1, num + 1)]
 
     def grow_all(self):
         for apple in self.apples:
@@ -237,7 +238,8 @@ class StarGardener(Gardener):
         print('Gardner is finished')
 
     def poison_pests(self):
-        pass
+        pests.quantity = 10
+        print("The Gardener is poisoning the pests")
 
     def check_states(self):
         for all_plants in self.plants:
@@ -247,51 +249,39 @@ class StarGardener(Gardener):
                 return False
 
 
-# HOMEWORK
-## And there is also a Pests who have:
-# 1. Type
-# 2. Quntity
-
 class BadassPests(Pests):
-    def __init__(self, pest_type, quantity):
-        super(BadassPests, self).__init__(pest_type, quantity)
-        self.pests_type = pest_type
+    def __init__(self, pests_type, quantity):
+        super(BadassPests, self).__init__(pests_type, quantity)
+        self.pests_type = pests_type
         self.quantity = quantity
 
-    ### And:1.Eat the plants
-
-
-def eat(self):
-    print("Pests are looking for a fresh target")
-    for pest in range(self.quantity):
-        tomato_bush.tomatoes.pop()
-        if tomato_bush.tomatoes == 0:
-            print(f"No tomatoes are left for bugs")
+    def eat(self):
+        for pest in range(self.quantity):
+            while len(tomato_bush.tomatoes) == 0:
+                tomato_bush.tomatoes.pop()
+            print(f"No tomatoes are left")
+            break
+        for pest in range(self.quantity):
+            while len(apple_tree.apples) == 0:
+                apple_tree.apples.pop()
+            print(f"No apples are left")
             break
 
 
-    for pest in range(self.quantity):
-        apple_tree.apples.pop()
-        if apple_tree.apples == 0:
-           print(f"No apples are left for bugs")
-           break
-
-### Implement the possibility when pests eat the fruit and vegetable
-
-
-# Your implementation should work with this: Please note that this  part doesn't include the pests, you need to finish it as well.
-if __name__ == 'main':
+if __name__ == '__main__':
     # Creating list of instances for vegetables and fruits, pests and gardener
     tomato_bush = TomatoBush(4)
     apple_tree = AppleTree(3)
     pests = BadassPests('worm', 10)
     tom = StarGardener('Tom', [tomato_bush, apple_tree])
+    tom.poison_pests()
+    pests.eat()
     # creating only one garden instance with vegetables and fruits
     garden = Garden(vegetables=tomato_bush.tomatoes, fruits=apple_tree.apples, pests=pests, gardener=tom)
     garden.show_the_garden()
     state = tom.check_states()
-    # if not state:
-    #     gardener.handling()
+    if not state:
+        tom.handling()
     for i in range(3):
         tom.handling()
     tom.harvest()
