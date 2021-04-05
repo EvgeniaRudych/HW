@@ -259,12 +259,12 @@ class BadassPests(Pests):
         for pest in range(self.quantity):
             while len(tomato_bush.tomatoes) == 0:
                 tomato_bush.tomatoes.pop()
-            print(f"No tomatoes are left")
+            print("No tomatoes are left")
             break
         for pest in range(self.quantity):
             while len(apple_tree.apples) == 0:
                 apple_tree.apples.pop()
-            print(f"No apples are left")
+            print("No apples are left")
             break
 
 
