@@ -243,8 +243,7 @@ class StarGardener(Gardener):
 
     def check_states(self):
         for all_plants in self.plants:
-            for plant in all_plants:
-                if plant.state == 3:
+                if all_plants.state == 3:
                     return True
                 return False
 
