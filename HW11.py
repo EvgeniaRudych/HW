@@ -1,4 +1,6 @@
 from functools import wraps
+
+
 # 1. double_result
 # This decorator function should return the result of another function multiplied by two
 def double_result(func):
@@ -21,7 +23,7 @@ def add(a, b):
 
 
 print(add(5, 5))  # 20
-print(add(20, 60)) # 160
+print(add(20, 60))  # 160
 
 
 # 2. only_odd_parameters
@@ -32,19 +34,19 @@ def only_odd_parameters(func):
     def inner_func(*args):
         for a in args:
             if a % 2 == 0:
-                print(f"Please use only odd numbers!")
-            else:
-                return func(*args)
+                return f"Please use only odd numbers!"
+        return func(*args)
 
     return inner_func
+
 
 @only_odd_parameters
 def add(a, b):
     return a + b
 
 
-add(5, 5)  # 10
-add(4, 4)  # "Please use only odd numbers!"
+print(add(5, 5))  # 10
+print(add(4, 4))  # "Please use only odd numbers!"
 
 
 @only_odd_parameters
@@ -94,10 +96,12 @@ def type_check(correct_type):
             if isinstance(arg, correct_type):
                 return func(arg)
             else:
-                print(f"Wrong Type: {type}")
+                print(f"Wrong Type: {type(arg).__name__}")
 
         return inner
+
     return type_checking
+
 
 @type_check(int)
 def times2(num):
