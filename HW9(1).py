@@ -16,7 +16,7 @@
 import logging
 
 log_template = ' %(asctime)s - %(name)s - %(levelname)s - %(message)s'
-logging.basicConfig(level=logging.INFO, filename='HW9(1).log', filemode='a', format=log_template)
+logging.basicConfig(level=logging.INFO, filename='HW9_1.log', filemode='a', format=log_template)
 
 logging.info(f"This is a calculator")
 
@@ -83,6 +83,7 @@ def mult_operation():
     logging.info("You got your multiplication")
     return z
 
+
 def div_operation():
     print(f"division")
     logging.info("This is a division operation")
@@ -122,8 +123,12 @@ def exc_operation():
     except ValueError:
         logging.error("Y is not a number")
         return
-    z = x ** y
-    print(f"{x} ** {y} = {z}")
+    try:
+        z = x ** y
+    except ZeroDivisionError:
+        print("You can't raise zero by negative power")
+        logging.info("You can't raise a o by negative power")
+        return
     return z
 
 
@@ -142,9 +147,13 @@ def sqrt_operation():
     except ValueError:
         logging.error("Y is not a number")
         return
-    z = x ** (1 / y)
-    print(f"{x} ** (1 / {y}) = {z}")
-    return z
+    try:
+        z = x ** (1 / y)
+        print(f"{x} ** (1 / {y}) = {z}")
+        return z
+    except ZeroDivisionError:
+        print("You can't divide by zero")
+        return
 
 
 def percent_operation():
