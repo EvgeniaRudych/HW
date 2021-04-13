@@ -159,7 +159,7 @@ def sqrt_operation():
 def percent_operation():
     print(f"square root")
     logging.info("This is an exponentiation operation")
-    str_x = input(" Enter yout first number: ")
+    str_x = input(" Enter your first number: ")
     try:
         x = float(str_x)
     except ValueError:
