@@ -1,0 +1,12 @@
+ 2021-04-13 22:52:41,913 - root - INFO - This is a calculator
+ 2021-04-13 22:52:41,914 - root - INFO - This is a sum operation
+ 2021-04-13 22:52:46,676 - root - INFO - You got your sum
+ 2021-04-13 22:52:46,677 - root - INFO - This is a subtraction operation
+ 2021-04-13 22:52:58,758 - root - INFO - You got your subtraction
+ 2021-04-13 22:52:58,759 - root - INFO - This is a multiplication operation
+ 2021-04-13 22:53:00,773 - root - INFO - You got your multiplication
+ 2021-04-13 22:53:00,773 - root - INFO - This is a division operation
+ 2021-04-13 22:53:03,302 - root - INFO - This is an exponentiation operation
+ 2021-04-13 22:53:08,811 - root - INFO - You can't raise a o by negative power
+ 2021-04-13 22:53:08,812 - root - INFO - This is an exponentiation operation
+ 2021-04-13 22:53:13,253 - root - INFO - This is an exponentiation operation
