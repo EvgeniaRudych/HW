@@ -62,20 +62,19 @@ class Roomba:
             self.water_amount = self.water_amount - self.water_intake
 
     def vacuum_cleaner(self):
+        if self.charge > 20:
+            self.charge -= self.charge_intake
+        elif 1 < self.charge < 20:
+            self.charge -= 1
+            raise NotEnoughCharge
+        else:
+            raise NoCharge
         if self.fullness == 100:
             raise NoRoom
         elif self.fullness > 90:
             raise NotEnoughRoom
         else:
             self.fullness += 10
-
-    def charging(self):
-        if self.charge == 0:
-            raise NoCharge
-        elif self.charge < 20:
-            raise NotEnoughCharge
-        else:
-            self.charge = self.charge - self.charge_intake
 
 
 def wash(roomba):
@@ -88,26 +87,23 @@ def vacuum_cleaner(roomba):
     roomba.vacuum_cleaner()
 
 
-
-roomba1 = Roomba(100,0, 100)
+roomba1 = Roomba(100, 0, 100)
 
 
 def move(roomba):
     i = 10
-    l = 100
+    k = 100
     while True:
         print(f"moving")
         try:
             wash(roomba)
         except NoWater:
-            if l == 0:
-             print(f"No water.Can't wash")
+            if k == 0:
+                print(f"No water.Can't wash")
         try:
             vacuum_cleaner(roomba)
         except NoRoom:
             print(f"No room. Can't clean anymore")
-        try:
-            roomba.charge()
         except NoCharge:
             print("Not enough power")
             break
@@ -115,7 +111,9 @@ def move(roomba):
             if i == 0:
                 print("Can't move anymore")
                 break
+            else:
+                i = i - 1
         time.sleep(1)
 
-move(roomba1)
 
+move(roomba1)
