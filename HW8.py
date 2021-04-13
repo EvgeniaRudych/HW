@@ -22,12 +22,6 @@ class Animal(ABC):
 
 
 class Predator(Animal):
-    def __init__(self, power: int, speed: int):
-        super().__init__(power, speed)
-        self.id = None
-        self.max_power = power
-        self.current_power = power
-        self.speed = speed
 
     def eat(self, forest: Forest):
 
@@ -50,12 +44,6 @@ class Predator(Animal):
 
 
 class Herbivorous(Animal):
-    def __init__(self, power: int, speed: int):
-        super().__init__(power, speed)
-        self.id = None
-        self.max_power = power
-        self.current_power = power
-        self.speed = speed
 
     def __str__(self):
         return f"{self.__class__.__name__}"
