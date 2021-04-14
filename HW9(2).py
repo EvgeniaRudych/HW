@@ -87,23 +87,23 @@ def vacuum_cleaner(roomba):
     roomba.vacuum_cleaner()
 
 
-roomba1 = Roomba(100, 0, 100)
+roomba1 = Roomba(33, 0, 33)
 
 
 def move(roomba):
     i = 10
-    k = 100
     while True:
-        print(f"moving")
+        print("moving")
         try:
             wash(roomba)
         except NoWater:
-            if k == 0:
-                print(f"No water.Can't wash")
+                print("No water.Can't wash")
+        except NotEnoughWater:
+                print("Not enough water to continue")
         try:
             vacuum_cleaner(roomba)
         except NoRoom:
-            print(f"No room. Can't clean anymore")
+            print("No room. Can't clean anymore")
         except NoCharge:
             print("Not enough power")
             break
