@@ -97,7 +97,7 @@ def move(roomba):
         try:
             wash(roomba)
         except NoWater:
-                print("No water.Can't wash")
+            print("No water.Can't wash")
         except NotEnoughWater:
             print("Not enough water to continue")
         try:
