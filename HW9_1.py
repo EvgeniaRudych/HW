@@ -22,7 +22,7 @@ logging.info(f"This is a calculator")
 
 
 def sum_operation():
-    print(f"sum")
+    print("sum")
     logging.info("This is a sum operation")
     str_x = input("Enter your first number: ")
     try:
@@ -43,7 +43,7 @@ def sum_operation():
 
 
 def subtract_operation():
-    print(f"subtraction")
+    print("subtraction")
     logging.info("This is a subtraction operation")
     str_x = input(" Enter yout first number: ")
     try:
@@ -64,7 +64,7 @@ def subtract_operation():
 
 
 def mult_operation():
-    print(f"multiplication")
+    print("multiplication")
     logging.info("This is a multiplication operation")
     str_x = input(" Enter yout first number: ")
     try:
@@ -85,7 +85,7 @@ def mult_operation():
 
 
 def div_operation():
-    print(f"division")
+    print("division")
     logging.info("This is a division operation")
     str_x = input(" Enter yout first number: ")
     try:
@@ -109,7 +109,7 @@ def div_operation():
 
 
 def exc_operation():
-    print(f"exponentiation")
+    print("exponentiation")
     logging.info("This is an exponentiation operation")
     str_x = input(" Enter yout first number: ")
     try:
@@ -132,9 +132,9 @@ def exc_operation():
     return z
 
 
-def sqrt_operation():
-    print(f"square root")
-    logging.info("This is an exponentiation operation")
+def root_operation():
+    print("root")
+    logging.info("This is a root operation")
     str_x = input(" Enter yout first number: ")
     try:
         x = float(str_x)
@@ -157,8 +157,8 @@ def sqrt_operation():
 
 
 def percent_operation():
-    print(f"square root")
-    logging.info("This is an exponentiation operation")
+    print("percent operation")
+    logging.info("This is a percentage operation")
     str_x = input(" Enter your first number: ")
     try:
         x = float(str_x)
@@ -181,5 +181,5 @@ subtract_operation()
 mult_operation()
 div_operation()
 exc_operation()
-sqrt_operation()
+root_operation()
 percent_operation()
