@@ -133,8 +133,8 @@ def exc_operation():
 
 
 def root_operation():
-    print("root")
-    logging.info("This is a root operation")
+    print("square root")
+    logging.info("This is an root operation")
     str_x = input(" Enter yout first number: ")
     try:
         x = float(str_x)
@@ -158,7 +158,7 @@ def root_operation():
 
 def percent_operation():
     print("percent operation")
-    logging.info("This is a percentage operation")
+    logging.info("This is an exponentiation operation")
     str_x = input(" Enter your first number: ")
     try:
         x = float(str_x)
@@ -176,10 +176,32 @@ def percent_operation():
     return z
 
 
-sum_operation()
-subtract_operation()
-mult_operation()
-div_operation()
-exc_operation()
-root_operation()
-percent_operation()
+while True:
+    print("1. sum_operation")
+    print("2. subtract_operation")
+    print("3. mult_operation")
+    print("4. div_operation")
+    print("5. exc_operation")
+    print("6. root_operation")
+    print("7. percent_operation")
+    print("0. quite")
+    cmd = input("Choose a number you need: ")
+
+    if cmd == "1":
+        sum_operation()
+    elif cmd == "2":
+        subtract_operation()
+    elif cmd == "3":
+        mult_operation()
+    elif cmd == "4":
+        div_operation()
+    elif cmd == "5":
+        exc_operation()
+    elif cmd == "6":
+        root_operation()
+    elif cmd == "7":
+        percent_operation()
+    elif cmd == "0":
+        break
+    else:
+        print("Chosen number does not exist!")
