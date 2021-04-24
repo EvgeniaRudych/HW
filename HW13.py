@@ -85,7 +85,7 @@ def print_cube(num):
 
 
 def print_square(num):
-    print(f'Square of {num} is {num ** 3} ')
+    print(f'Square of {num} is {num ** 2} ')
     return num ** 2
 
 
