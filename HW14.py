@@ -20,7 +20,7 @@ def find_all_by_pattern(directory_path, pattern):
     files = glob.glob(f'{directory_path}/**/*.py', recursive=True)
     container = set()
     with ThreadPoolExecutor() as pool:
-        result = pool.map(find_by_pattern, files, pattern)
+        result = pool.map(find_by_pattern, files, pattern * len(files))
         for res in result:
             container.update(res)
     return container
@@ -28,7 +28,7 @@ def find_all_by_pattern(directory_path, pattern):
 
 if __name__ == "__main__":
     start = time.time()
-    search_by_pattern = find_all_by_pattern('.', pattern='print')
+    search_by_pattern = find_all_by_pattern('.', pattern=['print'])
     end = time.time() - start
     print(f'Search time in {end} seconds')
 
